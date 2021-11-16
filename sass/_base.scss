@@ -11,9 +11,20 @@ $colors: (
   grey-dark-3: #999,
 );
 
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 31.25em; //500px
+
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
 @function colors($color) {
   @return map-get($colors, $color);
 }
+
+$line: 1px solid colors(grey-light-1);
 
 * {
   margin: 0;
@@ -23,6 +34,10 @@ $colors: (
 
 html {
   font-size: 62.5%; // 1rem == 10px
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -36,4 +51,5 @@ body {
   );
   background-size: cover;
   background-repeat: no-repeat;
+  color: colors(grey-dark-2);
 }
